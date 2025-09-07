@@ -4,21 +4,25 @@ import yfinance as yf
 
 nasdaq_listed = pd.read_csv('./data/nasdaq-listed.csv')
 valid_tickers = set(nasdaq_listed['Symbol'])
+valid_periods = ['1d', '5d', '1mo', '3mo', '1y']
 
-# Ticker class object
+# Take ticker input
 ticker_input = input("Ticker: ").upper()
 # Check for validity
 while ticker_input not in valid_tickers:
     print("Invalid ticker.")
     ticker_input = input("Ticker: ").upper()
 
-period_input = input("Period (1d, 5d, 1mo, 3mo, 1y): ").lower()
-while period_input not in ['1d', '5d', '1mo', '3mo', '1y']:
+# Take input for the period
+period_input = input(f"Period ({', '.join(valid_periods)}): ").lower()
+while period_input not in valid_periods:
     print("Invalid Input.")
     period_input = input("Period (1d, 5d, 1mo, 3mo, 1y): ").lower()
 
+# Create ticker class object
 ticker = yf.Ticker(ticker_input)
-data = ticker.history(period=period_input, interval="1d") # Pandas dataframe of activity throughout past month
+ # Pandas dataframe of activity throughout past month
+data = ticker.history(period=period_input, interval="1d")
 
 plt.figure(figsize=(12, 6))
 # Line Plot
