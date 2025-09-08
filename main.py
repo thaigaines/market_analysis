@@ -22,15 +22,15 @@ ticker_input = is_valid_input(valid_tickers, "Ticker: ", str.upper)
 period_input = is_valid_input(valid_periods, f"Period ({', '.join(valid_periods)}): ", str.lower)
 
 # Prompt about another ticker
-add_another = is_valid_input(['y', 'n'], "Add another to compare? (y/n): ", str.lower)
+add_another = is_valid_input(valid_responses, "Add another to compare? (y/n): ", str.lower)
 
-# Plot visual elements
+# Plot constant visual elements
 plt.figure(figsize=(12, 6))
 plt.xlabel("Date")
 plt.ylabel("Price (USD)")
 plt.grid()
 
-# Run response scenarios
+### Run response scenarios
 
 ## Single stock
 if add_another == 'n':
