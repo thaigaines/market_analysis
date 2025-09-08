@@ -1,7 +1,11 @@
 # Market Analysis
 
-Super basic tool I put together today, solid way to warm back up into MPL and yfinance. Might make some updates here and there since I do enjoy using it.
+Simple, interactive stock analysis and comparison tool using yfinance and matplotlib.
 
-Type in a ticker, give it a period, and MPL prints the daily Open's and the Close's of the stock over that period.
+## Steps to use
+1. Type in a ticker
+2. Choose the period
+3. Decide if you want another ticker to compare
+4. The plot gets printed based on your inputs
 
-Or type in a second ticker and compare the two over their Closing prices.
+It's a very concise program, but I had fun putting it together today. Updates may be coming.

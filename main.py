@@ -18,11 +18,11 @@ def is_valid_input(valid_items, prompt, normalize=str): # passing in function pa
 # Check for valid ticker
 ticker_input = is_valid_input(valid_tickers, "Ticker: ", str.upper)
 
-# Prompt about another ticker
-add_another = is_valid_input(['y', 'n'], "Add another to compare? (y/n): ", str.lower)
-
 # Check valid input for the period
 period_input = is_valid_input(valid_periods, f"Period ({', '.join(valid_periods)}): ", str.lower)
+
+# Prompt about another ticker
+add_another = is_valid_input(['y', 'n'], "Add another to compare? (y/n): ", str.lower)
 
 # Plot visual elements
 plt.figure(figsize=(12, 6))
